@@ -137,7 +137,7 @@ class udhcpd
 
 
     list: (callback) ->
-        res = []
+        res = {"config":[]}
         @udhcpddb.forEach (key, val) ->
             res.config.push val
         callback(res)
