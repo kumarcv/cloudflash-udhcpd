@@ -353,7 +353,7 @@ On Success returns status code 204
 
 ### Request Headers
 
-    DELETE  /network/dhcp/subnet/85108146-6233-42d9-8f1c-2c8fca63f236
+    DELETE  /network/udhcpd/cc6279dd-7409-4cd2-b4ad-086dbd1b59a5
     
 ### Response JSON
 
