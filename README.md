@@ -167,7 +167,7 @@ On Success returns 200 with JSON data
     GET  /network/udhcpd
     
 ### Response JSON
-    {
+    
 	[
         	{
 		"id": "caa8dc3b-c178-47f4-b0b4-3f53ced8181d",
@@ -196,6 +196,6 @@ On Success returns 200 with JSON data
 			}
         	}
 	]
-    }
+    
 
 
