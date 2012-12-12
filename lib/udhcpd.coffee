@@ -137,16 +137,14 @@ class udhcpd
 
 
     list: (callback) ->
-        res = {"config":[]}
+        res = []
         @udhcpddb.forEach (key, val) ->
-            res.config.push val
+            res.push val if val
         callback(res)
 
     listById: (id, callback)->
-        res = {}
         entry = @udhcpddb.get id
-        res.config =  entry
-        callback(res)
+        callback(entry)
 
     remove: (id, callback) ->
         entry = @udhcpddb.get id
@@ -159,9 +157,11 @@ class udhcpd
             unless result instanceof Error
                 res = fileops.fileExistsSync "/usr/sbin/svcs"
                 unless res
-                    exec "pkill udhcpd; service udhcpd restart"
+                    exec "pkill udhcpd; service udhcpd restart", (error, stdout, stderror) =>
+                        console.log error
                 else
-                    exec "svcs dhcp restart"
+                    exec "svcs dhcp restart", (error, stdout, stderror) =>
+                        console.log error
                 callback true
             else
                 callback result

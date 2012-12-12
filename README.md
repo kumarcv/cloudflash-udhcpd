@@ -166,17 +166,39 @@ List DHCP servers configuration
 
 ### Response JSON
 
-
-    {
-      "config":
-      [
-       {
-           "id": "cc6279dd-7409-4cd2-b4ad-086dbd1b59a5",
-           "config":
-           {
+    [
+        {
+           "id": "fdc1a6fa-a34a-42fb-b735-837a849bfe64",
+           "config": {
+                "start": "192.168.0.20",
+                "end": "192.168.0.254",
+                "interface": "eth0",
+                "max_leases": 254,
+                "remaining": "yes",
+                "auto_time": 7200,
+                "decline_time": 3600,
+                "conflict_time": 3600,
+                "offer_time": 60,
+                "min_lease": 60,
+                "lease_file": "/var/lib/misc/udhcpd.leases",
+                "pidfile": "/var/run/udhcpd.pid",
+                "notify_file": "dumpleases",
+                "siaddr": "192.168.0.22",
+                "option": {
+                    "subnet": [
+                       "1.1.1.1",
+                       "2.2.2.2"
+                     ],
+                     "mtu": "100"
+                 }
+             }
+        },
+        {
+           "id": "4d2b0825-1ce0-4d01-9cc3-3edc5307cfaf",
+           "config": {
                "start": "192.168.0.20",
-               "end": "192.168.0.100",
-               "interface": "wan0",
+               "end": "192.168.0.254",
+               "interface": "eth1",
                "max_leases": 254,
                "remaining": "yes",
                "auto_time": 7200,
@@ -188,64 +210,16 @@ List DHCP servers configuration
                "pidfile": "/var/run/udhcpd.pid",
                "notify_file": "dumpleases",
                "siaddr": "192.168.0.22",
-               "sname": "zorak",
-               "boot_file": "/var/lib/misc/udhcpd.leases",
-               "option":
-               {
-                   "subnet":
-                   [
-                       "192.168.0.25"
+               "option": {
+                  "subnet": [
+                        "1.1.1.1",
+                        "2.2.2.2"
                    ],
-                   "router":
-                   [
-                       "192.10.0.40",
-                       "192.10.0.41"
-                   ],
-                   "dns":
-                   [
-                       "192.10.0.40",
-                       "192.10.0.41"
-                   ],
-                   "wins":
-                   [
-                       "192.10.0.40",
-                       "192.10.0.41"
-                   ],
-                   "domain":
-                   [
-                       "192.10.0.40",
-                       "192.10.0.41"
-                   ],
-                   "lease": 60,
-                   "timezone": "IST",
-                   "timesvr":
-                   [
-                       "192.10.0.40",
-                       "192.10.0.41"
-                   ],
-                   "logsvr":
-                   [
-                       "192.10.0.40",
-                       "192.10.0.41"
-                   ],
-                   "cookiesvr":
-                   [
-                       "192.10.0.40",
-                       "192.10.0.41"
-                   ],
-                   "lprsrv":
-                   [
-                       "192.10.0.40",
-                       "192.10.0.41"
-                   ],
-                   "hostname": "kvm570"
-               }
-           }
-       }
-      ]      
-    }
-
-
+               "mtu": "100"
+                }
+             } 
+        }
+    ]
 
     
     
@@ -265,7 +239,7 @@ On Success returns 200 with JSON data
     
 ### Response JSON
 
-    {
+    
       {
         "id": "cc6279dd-7409-4cd2-b4ad-086dbd1b59a5",
         "config":
@@ -338,7 +312,7 @@ On Success returns 200 with JSON data
            }
         }
      }
-    }    
+    
 
 
 Delete DHCP server configuration
