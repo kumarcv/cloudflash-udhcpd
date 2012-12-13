@@ -1,6 +1,6 @@
 {
   "name": "cloudflash-udhcpd",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "dependencies": {    
     "fileops":"0.1.3",
     "json-schema": "0.2.0",
@@ -14,12 +14,12 @@
   "devDependencies": {},
   "optionalDependencies": {},
   "author": "Ravi Chunduru",
-  "description": "cloudflash network module implements network and dhcp configuration on unix systems",
+  "description": "cloudflash-udhcpd module implements udhcpd server configuration on unix systems",
   "repository": {
     "type": "git",
-    "url": "git://github.com/clearpath-networks/cloudflash-network.git"
+    "url": "git://github.com/clearpath-networks/cloudflash-udhcpd.git"
   },
-  "main": "./lib/udhcpd"
+  "main": "./lib/dhcpd"
 }
 
 
