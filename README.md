@@ -1,3 +1,6 @@
+*OBSOLETE, please refer to cloudflash-network module*
+=====================================================
+
 *List of uDHCPd APIs*
 ======================
 
